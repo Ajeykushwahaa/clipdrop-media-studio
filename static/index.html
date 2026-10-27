@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101310">
+<title>ClipDrop · Your local media studio</title>
+<link rel="stylesheet" href="/static/style.css">
+<script defer src="/static/app.js"></script>
+</head>
+<body>
+<aside class="sidebar">
+<a class="brand" href="/" aria-label="ClipDrop home"><span class="brand-mark" aria-hidden="true">↧</span>ClipDrop<span class="brand-dot">.</span></a>
+<p class="nav-label">WORKSPACE</p>
+<nav aria-label="Workspace"><a class="nav-link active" href="#download" aria-current="page"><span aria-hidden="true">↓</span> Media studio <span class="nav-arrow" aria-hidden="true">↗</span></a><a class="nav-link" href="#recent"><span aria-hidden="true">◷</span> Recent files</a><a class="nav-link" href="#how-it-works"><span aria-hidden="true">ⓘ</span> How it works</a></nav>
+<div class="sidebar-bottom"><div class="local-icon" aria-hidden="true">⌘</div><strong>Your machine. Your files.</strong><p>Downloads are processed by your local ClipDrop server.</p><div class="local-label"><span></span> LOCAL WORKSPACE</div></div>
+</aside>
+<div class="workspace">
+<header class="topbar"><span class="breadcrumb">Workspace <span>/</span> <strong>Media studio</strong></span><span class="top-badge"><span></span> Personal workspace</span></header>
+<main>
+<section class="hero" aria-labelledby="page-title"><div class="eyebrow">A LITTLE LESS BUFFERING. A LITTLE MORE KEEPING.</div><h1 id="page-title">Your favorites.<br><span>On your terms.</span></h1><p class="intro">Public links. Local files. Your favorite format.<br>Download a video or convert audio and video in one workspace.</p><div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="art-card"><div class="art-play">▶</div><span class="art-line"></span><span class="art-line short"></span></div><div class="art-download">↓</div><span class="art-spark">✦</span></div></section>
+<div class="content-grid">
+<div class="primary-column">
+<section id="download" class="card download-card" aria-label="Download a video">
+<div class="section-heading"><div><span class="step-number">01</span><h2>Make it yours</h2></div><span class="small-badge">VIDEO + AUDIO</span></div>
+<div class="studio-tabs" role="tablist" aria-label="Media tools"><button id="download-tab" class="studio-tab" role="tab" aria-selected="true" aria-controls="download-panel" type="button">↙ Download link</button><button id="convert-tab" class="studio-tab" role="tab" aria-selected="false" aria-controls="convert-panel" tabindex="-1" type="button">⇄ Convert a file</button></div>
+<div id="download-panel" role="tabpanel" aria-labelledby="download-tab"><form id="form"><label for="url">Public video or audio link</label><div class="input-wrap"><span aria-hidden="true">↗</span><input id="url" type="url" required placeholder="Paste a video, reel, or audio link…" autocomplete="off" maxlength="2048"><button id="paste-url" class="paste-button" type="button" aria-label="Paste link from clipboard">Paste</button></div><p id="paste-feedback" class="input-hint">One public link at a time. Private, login-only, and DRM-protected media are not supported.</p><div class="format-grid"><div><label for="download-format">Output format</label><select id="download-format"></select></div><div><label for="quality">Maximum video quality</label><select id="quality" aria-describedby="quality-help"><option value="720">720p HD</option><option value="1080">1080p Full HD</option><option value="360">360p Compact</option></select><p id="quality-help" class="field-help">Sets the maximum downloaded video height.</p></div></div><button id="submit" class="download-button full-button" type="submit">Start download <span aria-hidden="true">↓</span></button><p class="input-hint platform-label">LINK SOURCES</p><div id="platforms" class="platforms"><span>YouTube</span><span>Facebook Reels</span><span>Instagram</span><span>TikTok</span><span>X / Twitter</span><span>+ more</span></div></form></div>
+<div id="convert-panel" role="tabpanel" aria-labelledby="convert-tab" hidden><form id="convert-form"><label for="media-file">Audio or video file</label><div id="drop-zone" class="drop-zone"><span class="drop-symbol" aria-hidden="true">⇧</span><strong>Choose a file or drop it here</strong><p>Common audio and video files · up to 500 MiB</p><input id="media-file" type="file" accept=".mp4,.mkv,.webm,.mov,.avi,.m4v,.mpeg,.mpg,.wmv,.flv,.3gp,.ts,.mts,.m2ts,.mp3,.m4a,.wav,.flac,.ogg,.opus,.aac,.wma,.aiff,.aif" aria-label="Choose audio or video file"></div><p id="selected-file" class="input-hint" aria-live="polite">Your file will be uploaded to this local server for conversion.</p><label for="convert-format">Convert to</label><select id="convert-format"></select><button id="convert-submit" class="download-button full-button" type="submit">Convert file <span aria-hidden="true">⇄</span></button></form></div><div class="card-foot"><span aria-hidden="true">◈</span> Source availability and quality vary. Converting does not improve source quality.</div>
+<div id="result" hidden><div class="result-heading"><span class="status-indicator"></span><strong id="status-label">Job status</strong></div><h3 id="result-title">Preparing your file</h3><p id="message"></p><progress id="progress" max="100" value="0" aria-label="Task progress"></progress><p id="result-meta" class="result-meta"></p><a id="save" hidden>Save file <span aria-hidden="true">↓</span></a></div>
+</section>
+<section id="recent" class="card recent-card" aria-labelledby="recent-title"><div class="section-heading"><div><span class="history-symbol" aria-hidden="true">◷</span><h2 id="recent-title">Recent files</h2></div><button id="clear-history" class="text-button" type="button" aria-label="Clear recent-file list; saved files stay on disk">Clear list</button></div><div id="history-list"><div class="empty-state"><span aria-hidden="true">↧</span><div><strong>A home for your next download</strong><p>Completed files will appear in this browser list.</p></div></div></div></section>
+</div>
+<aside class="guide-column">
+<section id="how-it-works" class="guide-card" aria-labelledby="guide-title"><span class="guide-eyebrow">YOUR LOCAL MEDIA STUDIO</span><h2 id="guide-title">Three steps.<br>All yours.</h2><ol class="steps"><li><span>1</span><div><strong>Add your media</strong><p>Paste a supported public link, or upload a local media file.</p></div></li><li><span>2</span><div><strong>Pick your format</strong><p>Choose MP4, WebM, MP3, WAV, and more. Video needs a video source.</p></div></li><li><span>3</span><div><strong>Save your file</strong><p>Wait for processing, then save the finished file to your device.</p></div></li></ol></section>
+<section class="runtime-card"><div class="runtime-heading"><span aria-hidden="true">◎</span><strong>Local engine</strong></div><p id="runtime-status">Checking download tools…</p></section>
+</aside>
+</div>
+<footer><span>Built for your offline moments.</span><p>Only download or convert content you own or have permission to use.</p></footer>
+</main></div>
+</body></html>
