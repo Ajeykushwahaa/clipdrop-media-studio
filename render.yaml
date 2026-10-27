@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: clipdrop-media-studio
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: CLIPDROP_ALLOWED_HOSTS
+        value: "*"
+      - key: CLIPDROP_DOWNLOADS
+        value: /tmp/clipdrop-downloads
+      - key: CLIPDROP_MAX_UPLOAD_BYTES
+        value: "104857600"
+      - key: CLIPDROP_MAX_STORAGE_BYTES
+        value: "524288000"
